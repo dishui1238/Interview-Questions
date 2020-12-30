@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2020-12-30 15:44:54
+ * @LastEditTime: 2020-12-30 15:56:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\README.md
@@ -9,6 +9,7 @@
 
 # 每日一问
 
+二八定律
 20% 的知识可以解决 80% 的问题
 20% 的人掌握世上 80% 的财富
 
