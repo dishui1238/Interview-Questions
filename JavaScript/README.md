@@ -1,17 +1,15 @@
-[TOC]
+<!--
+ * @Author: your name
+ * @Date: 2020-12-30 10:40:55
+ * @LastEditTime: 2020-12-30 10:41:55
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
+-->
 
-# 1. HTML 篇
+# JavaScript 篇
 
-1. **页面导入样式时，使用 link 和 @import 有什么区别**
-
-   - @import 只能导入样式表，link 除了加载 CSS 外， 还可以定义 RSS、rel 连接属性、引入网站图标等
-   - 加载顺序：link 引用 CSS 时，在页面载入时同时加载；@import 需要页面网页完全载入以后加载
-   - 兼容性：link 是 XHTML 标签，无兼容问题；@import 是在 CSS2.1 提出的，低版本的浏览器不支持
-   - 修改问题：link 支持使用 Javascript 控制 DOM 去改变样式；而@import 不支持。
-
-# 2. JavaScript 篇
-
-## 2.1. 讲讲 JS 的数据类型？
+## 1. 讲讲 JS 的数据类型？
 
 最新的 ECMAScript 标准定义了 8 种数据类型: 7 种原始类型 和 Object
 
@@ -19,7 +17,7 @@
 
 对象类型包括：数组（Array）、函数（Function）、正则（RegExp）和日期（Date）
 
-## 2.2. 介绍下 Set、Map、WeakSet 和 WeakMap 的区别？
+## 2. 介绍下 Set、Map、WeakSet 和 WeakMap 的区别？
 
 Map:
 
@@ -110,9 +108,3 @@ _备注：_
 
     > 在计算机程序设计中，弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。
     > 由于这样的弱引用，WeakMap 的 key 是不可枚举的
-
-## 2.3. 讲讲 JS 的数据类型？
-
-# 3. 浏览器篇
-
-## 3.1. 简述浏览器缓存读取规则
