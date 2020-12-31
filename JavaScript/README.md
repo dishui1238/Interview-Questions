@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2020-12-30 10:41:55
+ * @LastEditTime: 2020-12-31 11:04:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -108,3 +108,44 @@ _备注：_
 
     > 在计算机程序设计中，弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。
     > 由于这样的弱引用，WeakMap 的 key 是不可枚举的
+
+## 3. `['1', '2', '3'].map(parseInt)` what & why ?
+
+what: [1, NaN, NaN]
+why:
+
+对于每个迭代 map, parseInt()传递两个参数: 字符串和基数。 所以实际执行的的代码是：
+
+```js
+["1", "2", "3"].map((item, index) => {
+  return parseInt(item, index);
+});
+```
+
+返回值分别为：
+
+```js
+parseInt("1", 0); // 1，基数为 10
+parseInt("2", 1); // NaN，不存在一进制，任何值都为 NaN
+parseInt("3", 2); // NaN, 3 不是二进制
+```
+
+**parseInt(string[, radix])**
+
+_注意：_ 在 radix 为 undefined，或者 radix 为 0 或者没有指定的情况下，JavaScript 作如下处理：
+
+- 如果字符串 string 以"0x"或者"0X"开头, 则基数是 16 (16 进制).
+- 如果字符串 string 以"0"开头, 基数是 8（八进制）或者 10（十进制），那么具体是哪个基数由实现环境决定。ECMAScript 5 规定使用 10，但是并不是所有的浏览器都遵循这个规定。因此，永远都要明确给出 radix 参数的值。
+- 如果字符串 string 以其它任何值开头，则基数是 10 (十进制)。
+
+**如果您实际上想要循环访问字符串数组, 该怎么办？**
+
+`['10','10','10','10','10'].map(Number);`
+
+**变形题：**
+
+```js
+let unary = (fn) => (val) => fn(val);
+let parse = unary(parseInt); // (val) => parseInt(val)
+console.log(["1.1", "2", "0.3"].map(parse)); // [1,2,0]
+```
