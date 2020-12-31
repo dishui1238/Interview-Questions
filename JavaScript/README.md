@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2020-12-31 11:04:36
+ * @LastEditTime: 2020-12-31 11:11:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -111,8 +111,9 @@ _备注：_
 
 ## 3. `['1', '2', '3'].map(parseInt)` what & why ?
 
-what: [1, NaN, NaN]
-why:
+**what:** [1, NaN, NaN]
+
+**why:**
 
 对于每个迭代 map, parseInt()传递两个参数: 字符串和基数。 所以实际执行的的代码是：
 
