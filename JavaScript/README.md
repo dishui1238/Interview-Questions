@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2020-12-31 11:11:42
+ * @LastEditTime: 2021-01-04 15:13:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -149,4 +149,61 @@ _注意：_ 在 radix 为 undefined，或者 radix 为 0 或者没有指定的�
 let unary = (fn) => (val) => fn(val);
 let parse = unary(parseInt); // (val) => parseInt(val)
 console.log(["1.1", "2", "0.3"].map(parse)); // [1,2,0]
+```
+
+## 4. 什么是防抖和节流？有什么区别？如何实现？
+
+1. 防抖、
+
+> 在事件被触发 n 秒后再执行回调，如果在这 n 秒内又被触发，则重新计时。
+
+思路：
+
+每次触发事件时都取消之前的延时调用方法
+
+```js
+<input id="input" />;
+
+function debounce(fun, delay = 500) {
+  let timeId = null;
+  return function () {
+    clearTimeout(timeId);
+    timeId = setTimeout(() => {
+      fun.apply(this, arguments);
+    }, delay);
+  };
+}
+
+// 使用
+function logValue(value) {
+  console.log(value);
+}
+let inputb = document.getElementById("input");
+let debounceFunc = debounce(logValue, 500); // (e.target.value) => {...}
+
+inputb.addEventListener("keyup", function (e) {
+  debounceFunc(e.target.value);
+});
+```
+
+2. 节流
+
+> 高频事件触发，但在 n 秒内只会执行一次，所以节流会稀释函数的执行频率
+
+思路：
+
+每次触发事件时都判断当前是否有等待执行的延时函数
+
+```js
+function throttle(fn, delay) {
+  let canRun = true;
+  return function (...args) {
+    if (!canRun) return;
+    canRun = false;
+    setTimeout(() => {
+      fn.call(this, args);
+      canRun = true;
+    }, delay);
+  };
+}
 ```
