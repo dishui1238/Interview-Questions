@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-01-08 08:20:40
+ * @LastEditTime: 2021-01-08 15:05:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -263,7 +263,35 @@ var b = 10;
 })();
 ```
 
-## 6. const 和 let 声明的变量不在 window 上，那到底在哪里
+## 6. 简单改造下面的代码，使之分别打印 10 和 20
+
+```JS
+var b = 10;
+(function b(){
+    b = 20;
+    console.log(b);
+})();
+```
+
+方法一：
+
+```JS
+var b = 10;
+(function b(){
+  //  b = 20;
+    console.log(b); // 打印出 10
+})(b);
+```
+
+```js
+var b = 10;
+(function b() {
+  var b = 20;
+  console.log(b); // 打印出 20
+})();
+```
+
+## 7. const 和 let 声明的变量不在 window 上，那到底在哪里
 
 用 let 和 const 声明的全局变量并没有在全局对象中，只是一个块级作用域（Script）中。
 

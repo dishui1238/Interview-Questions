@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2021-01-08 08:21:54
+ * @LastEditTime: 2021-01-08 14:59:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\README.md
@@ -30,7 +30,10 @@
 - [4. 什么是防抖和节流？有什么区别？如何实现？](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#4-%E4%BB%80%E4%B9%88%E6%98%AF%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0)
 
 - [5. 下面的代码打印什么内容，为什么？](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#5-%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E6%89%93%E5%8D%B0%E4%BB%80%E4%B9%88%E5%86%85%E5%AE%B9%E4%B8%BA%E4%BB%80%E4%B9%88)
-- [6. const 和 let 声明的变量不在 window 上，那到底在哪里](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#6-const-和-let-声明的变量不在-window-上，那到底在哪里)
+
+- [6. 简单改造下面的代码，使之分别打印 10 和 20](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#6-简单改造下面的代码，使之分别打印-10-和-20)
+
+- [7. const 和 let 声明的变量不在 window 上，那到底在哪里](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#7-const-和-let-声明的变量不在-window-上，那到底在哪里)
 
 ## [浏览器篇](https://github.com/dishui1238/Interview-Questions/tree/main/Browser)
 
