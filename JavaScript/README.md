@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-01-11 17:39:20
+ * @LastEditTime: 2021-01-12 17:09:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -347,13 +347,40 @@ Object.prototype.toString.call(an); // "[object Array]"
 这种方法对于所有基本的数据类型都能进行判断，即使是 null 和 undefined 。
 
 ```js
+// 判断基本类型
 Object.prototype.toString.call("An"); // "[object String]"
 Object.prototype.toString.call(1); // "[object Number]"
 Object.prototype.toString.call(Symbol(1)); // "[object Symbol]"
 Object.prototype.toString.call(null); // "[object Null]"
 Object.prototype.toString.call(undefined); // "[object Undefined]"
+Object.prototype.toString.call(true); // "[object Boolean]"
+
+// 判断引用类型
 Object.prototype.toString.call(function () {}); // "[object Function]"
+Object.prototype.toString.call(new Date()); // "[object Date]"
+Object.prototype.toString.call([1, 2, 3]); // "[object Array]"
+Object.prototype.toString.call(/^abc/); // "[object RegExp]"
 Object.prototype.toString.call({ name: "An" }); // "[object Object]"
+
+// 判断原生 JSON 对象
+Object.prototype.toString.call(JSON); // "[object JSON]"
+```
+
+这种方法不能准确判断自定义类型，如下例：
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+var person = new Person("Rose", 18);
+Object.prototype.toString.call(person); // "[object Object]"
+```
+
+只能用 instanceof 操作符来进行判断
+
+```js
+console.log(person instanceof Person); // true
 ```
 
 2. instanceof
@@ -373,3 +400,25 @@ Object.prototype.toString.call({ name: "An" }); // "[object Object]"
 ```
 
 3. Array.isArray()
+
+用来判断对象是否为数组，是 ES5 新增的方法
+
+## 9. 为 Array 对象添加一个去除重复项的方法
+
+```js
+// input
+[false, true, undefined, null, NaN, 0, 1, {}, {}, "a", "a", NaN].uniq();
+// output
+[false, true, undefined, null, NaN, 0, 1, {}, {}, "a"];
+```
+
+方法：
+
+需要注意，NaN === NaN 为 false，{} === {} 为 false。
+
+```js
+Array.prototype.uniq = function () {
+  return [...new Set(this)]; // this 指 调用 uniq 方法的 Array
+  // return Array.from(new Set(this)); // 这个也可以
+};
+```
