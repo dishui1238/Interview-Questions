@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-01-12 17:09:41
+ * @LastEditTime: 2021-01-14 16:52:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -421,4 +421,53 @@ Array.prototype.uniq = function () {
   return [...new Set(this)]; // this 指 调用 uniq 方法的 Array
   // return Array.from(new Set(this)); // 这个也可以
 };
+```
+
+## 10. JS 如何跳出循环
+
+| 序号 | 方法            | break  | continue     | return       | return true  | return false | 结论 |
+| ---- | --------------- | ------ | ------------ | ------------ | ------------ | ------------ | ---- |
+| 1    | for 循环        | 成功   | 跳出本次循环 | 不合法       | 不合法       | 不合法       | √    |
+| 2    | Array.forEach() | 不合法 | 不合法       | 跳出本次循环 | 跳出本次循环 | 跳出本次循环 | ×    |
+| 3    | for...in        | 成功   | 跳出本次循环 | 不合法       | 不合法       | 不合法       | √    |
+| 4    | Array.map()     | 不合法 | 不合法       | 跳出本次循环 | 跳出本次循环 | 跳出本次循环 | ×    |
+| 5    | Array.some()    | 不合法 | 不合法       | 跳出本次循环 | 成功         | 跳出本次循环 | √    |
+| 6    | Array.every()   | 不合法 | 不合法       | 成功         | 跳出本次循环 | 成功         | √    |
+| 7    | Array.filter()  | 不合法 | 不合法       | 跳出本次循环 | 跳出本次循环 | 跳出本次循环 | ×    |
+
+## 11. 分析 for 循环 和 forEach 的性能。
+
+代码测试 for 、forEach 执行时间：
+
+```js
+let arrs = new Array(100000);
+
+console.time("for");
+for (let i = 0; i < arrs.length; i++) {}
+console.timeEnd("for");
+
+console.time("forEach");
+arrs.forEach((arr) => {});
+console.timeEnd("forEach");
+```
+
+10 万级别下：forEach 性能高于 for
+
+```
+for: 3.2060546875 ms
+forEach: 0.361083984375 ms
+```
+
+百万 级别下：性能基本一致
+
+```
+for: 3.97021484375 ms
+forEach: 3.897705078125 ms
+```
+
+千万 级别下：for 性能远高于 forEach
+
+```
+for: 8.347900390625 ms
+forEach: 29.922119140625 ms
 ```
