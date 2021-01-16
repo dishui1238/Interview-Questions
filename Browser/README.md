@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:40
- * @LastEditTime: 2021-01-02 20:56:15
+ * @LastEditTime: 2021-01-15 14:02:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\Browser\README.md
@@ -70,3 +70,5 @@ Push Cache（推送缓存）是 HTTP/2 中的内容，当以上三种缓存都�
 | webkit   | Safari        | 旧版的 Chrome 也是使用 webkit                                                                                                |
 | Blink    | Chrome、Opera | 谷歌浏览器内核，属于 Webkit 的一个分支，与 Opera 一起在研发                                                                  |
 | Chromium |               | 这个比较特殊，Chromium 是谷歌的开源项目是一款浏览器，Chrome 是 Chromium 的稳定版。国内的大部分双核浏览器都采用 Chromium 内核 |
+
+## 3.介绍下重绘和回流（Repaint & Reflow），以及如何进行优化

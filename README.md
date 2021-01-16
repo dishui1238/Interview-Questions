@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2021-01-08 16:22:05
+ * @LastEditTime: 2021-01-15 14:06:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\README.md
@@ -34,6 +34,14 @@
 - [6. 简单改造下面的代码，使之分别打印 10 和 20](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#6-%E7%AE%80%E5%8D%95%E6%94%B9%E9%80%A0%E4%B8%8B%E9%9D%A2%E7%9A%84%E4%BB%A3%E7%A0%81%E4%BD%BF%E4%B9%8B%E5%88%86%E5%88%AB%E6%89%93%E5%8D%B0-10-%E5%92%8C-20)
 
 - [7. const 和 let 声明的变量不在 window 上，那到底在哪里](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#7-const-%E5%92%8C-let-%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8D%E5%9C%A8-window-%E4%B8%8A%E9%82%A3%E5%88%B0%E5%BA%95%E5%9C%A8%E5%93%AA%E9%87%8C)
+
+- [8. 有以下 3 个判断数组的方法，请分别介绍它们之间的区别和优劣](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#8-%E6%9C%89%E4%BB%A5%E4%B8%8B-3-%E4%B8%AA%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%E8%AF%B7%E5%88%86%E5%88%AB%E4%BB%8B%E7%BB%8D%E5%AE%83%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BC%98%E5%8A%A3)
+
+- [9. 为 Array 对象添加一个去除重复项的方法](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#9-%E4%B8%BA-array-%E5%AF%B9%E8%B1%A1%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E9%A1%B9%E7%9A%84%E6%96%B9%E6%B3%95)
+
+- [10. JS 如何跳出循环](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#10-js-%E5%A6%82%E4%BD%95%E8%B7%B3%E5%87%BA%E5%BE%AA%E7%8E%AF)
+
+- [11. 分析 for 循环 和 forEach 的性能](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#11-%E5%88%86%E6%9E%90-for-%E5%BE%AA%E7%8E%AF-%E5%92%8C-foreach-%E7%9A%84%E6%80%A7%E8%83%BD)
 
 ## [浏览器篇](https://github.com/dishui1238/Interview-Questions/tree/main/Browser)
 
