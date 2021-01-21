@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:40
- * @LastEditTime: 2021-01-15 14:02:31
+ * @LastEditTime: 2021-01-21 13:08:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\Browser\README.md
@@ -72,3 +72,47 @@ Push Cache（推送缓存）是 HTTP/2 中的内容，当以上三种缓存都�
 | Chromium |               | 这个比较特殊，Chromium 是谷歌的开源项目是一款浏览器，Chrome 是 Chromium 的稳定版。国内的大部分双核浏览器都采用 Chromium 内核 |
 
 ## 3.介绍下重绘和回流（Repaint & Reflow），以及如何进行优化
+
+### 减少回流和重绘方式
+
+1. 最小化重绘和重排
+
+> 合并多次对 DOM 和样式的修改，然后一次处理掉
+
+    例子：
+
+    ```js
+    const el = document.getElementById("test");
+
+    el.style.padding = "5px";
+    el.style.borderLeft = "1px";
+    el.style.borderRight = "2px";
+    ```
+
+    例子中，有三个样式属性被修改了，每一个都会影响元素的几何结构，引起回流。当然，大部分现代浏览器都对其做了优化，因此，只会触发一次重排。但是如果在旧版的浏览器或者在上面代码执行的时候，有其他代码访问了布局信息(上文中的会触发回流的布局信息)，那么就会导致三次重排。
+
+    可以使用如下方式：
+
+    - 使用 cssText
+
+      ```js
+      const el = document.getElementById("test");
+      el.style.cssText += "border-left: 1px; border-right: 2px; padding: 5px;";
+      ```
+
+    - 修改 CSS 的 class
+
+      ```js
+      const el = document.getElementById("test");
+      el.className += " active";
+      ```
+
+2. 批量修改 DOM
+
+当我们需要对 DOM 对一系列修改的时候，可以通过以下步骤减少回流重绘次数：
+
+- 使元素脱离文档流
+- 对其进行多次修改
+- 将元素带回到文档中。
+
+该过程的第一步和第三步可能会引起回流，但是经过第一步之后，对DOM的所有修改都不会引起回流重绘，因为它已经不在渲染树了。

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2021-01-15 14:06:47
+ * @LastEditTime: 2021-01-21 09:32:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\README.md
@@ -47,6 +47,7 @@
 
 - [1. 简述浏览器缓存读取规则](https://github.com/dishui1238/Interview-Questions/tree/main/Browser#1-简述浏览器缓存读取规则)
 - [2. 常见浏览器内核](https://github.com/dishui1238/Interview-Questions/tree/main/Browser#2-常见浏览器内核)
+- [3. 介绍下重绘和回流（Repaint & Reflow），以及如何进行优化](https://github.com/dishui1238/Interview-Questions/tree/main/Browser#3%E4%BB%8B%E7%BB%8D%E4%B8%8B%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81repaint--reflow%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96)
 
 ## [网络篇](https://github.com/dishui1238/Interview-Questions/tree/main/HTTP)
 
