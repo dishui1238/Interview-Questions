@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:40
- * @LastEditTime: 2021-01-21 13:08:47
+ * @LastEditTime: 2021-01-27 16:32:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\Browser\README.md
@@ -75,6 +75,8 @@ Push Cache（推送缓存）是 HTTP/2 中的内容，当以上三种缓存都�
 
 ### 减少回流和重绘方式
 
+https://muyiy.cn/question/browser/22.html
+
 1. 最小化重绘和重排
 
 > 合并多次对 DOM 和样式的修改，然后一次处理掉
@@ -115,4 +117,4 @@ Push Cache（推送缓存）是 HTTP/2 中的内容，当以上三种缓存都�
 - 对其进行多次修改
 - 将元素带回到文档中。
 
-该过程的第一步和第三步可能会引起回流，但是经过第一步之后，对DOM的所有修改都不会引起回流重绘，因为它已经不在渲染树了。
+该过程的第一步和第三步可能会引起回流，但是经过第一步之后，对 DOM 的所有修改都不会引起回流重绘，因为它已经不在渲染树了。

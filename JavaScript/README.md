@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-01-14 16:52:03
+ * @LastEditTime: 2021-01-27 16:56:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -435,7 +435,7 @@ Array.prototype.uniq = function () {
 | 6    | Array.every()   | 不合法 | 不合法       | 成功         | 跳出本次循环 | 成功         | √    |
 | 7    | Array.filter()  | 不合法 | 不合法       | 跳出本次循环 | 跳出本次循环 | 跳出本次循环 | ×    |
 
-## 11. 分析 for 循环 和 forEach 的性能。
+## 11. 分析 for 循环 和 forEach 的性能
 
 代码测试 for 、forEach 执行时间：
 
@@ -471,3 +471,11 @@ forEach: 3.897705078125 ms
 for: 8.347900390625 ms
 forEach: 29.922119140625 ms
 ```
+
+## 12. ES6 代码转成 ES5 代码的实现思路是什么
+
+- 将代码字符串解析成抽象语法树，即所谓的 AST
+- 对 AST 进行处理，在这个阶段可以对 ES6 代码进行相应转换，即转成 ES5 代码
+- 根据处理后的 AST 再生成代码字符串
+
+## 13. 数组里面有 10 万个数据，取第一个元素和第 10 万个元素的时间相差多少
