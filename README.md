@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2021-01-21 09:32:30
+ * @LastEditTime: 2021-01-27 16:59:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\README.md
@@ -42,6 +42,10 @@
 - [10. JS 如何跳出循环](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#10-js-%E5%A6%82%E4%BD%95%E8%B7%B3%E5%87%BA%E5%BE%AA%E7%8E%AF)
 
 - [11. 分析 for 循环 和 forEach 的性能](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#11-%E5%88%86%E6%9E%90-for-%E5%BE%AA%E7%8E%AF-%E5%92%8C-foreach-%E7%9A%84%E6%80%A7%E8%83%BD)
+
+- [12. ES6 代码转成 ES5 代码的实现思路是什么](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#12-es6-%E4%BB%A3%E7%A0%81%E8%BD%AC%E6%88%90-es5-%E4%BB%A3%E7%A0%81%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF%E6%98%AF%E4%BB%80%E4%B9%88)
+
+- [13. 数组里面有 10 万个数据，取第一个元素和第 10 万个元素的时间相差多少](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#13-%E6%95%B0%E7%BB%84%E9%87%8C%E9%9D%A2%E6%9C%89-10-%E4%B8%87%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%8F%96%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E5%92%8C%E7%AC%AC-10-%E4%B8%87%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%97%B6%E9%97%B4%E7%9B%B8%E5%B7%AE%E5%A4%9A%E5%B0%91)
 
 ## [浏览器篇](https://github.com/dishui1238/Interview-Questions/tree/main/Browser)
 
