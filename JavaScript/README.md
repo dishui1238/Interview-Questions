@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-01-27 17:04:41
+ * @LastEditTime: 2021-02-21 19:12:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -481,3 +481,19 @@ forEach: 29.922119140625 ms
 ## 13. 数组里面有 10 万个数据，取第一个元素和第 10 万个元素的时间相差多少
 
 JavaScript 没有真正意义上的数组，所有的数组其实是对象，其“索引”看起来是数字，其实会被转换成字符串，作为属性名（对象的 key）来使用。所以无论是取第 1 个还是取第 10 万个元素，都是用 key 精确查找哈希表的过程，其消耗时间大致相同。
+
+## 14. 输出以下代码的执行结果并解释为什么
+
+```js
+var a = { n: 1 };
+var b = a;
+a.x = a = { n: 2 };
+
+console.log(a.x);
+console.log(b.x);
+```
+
+结果： `undefined {n: 2} `
+知识点：多项赋值顺序，对象引用
+
+思路点击 https://juejin.cn/post/6844903649399799815
