@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-02-21 19:12:56
+ * @LastEditTime: 2021-03-08 14:20:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
@@ -498,6 +498,54 @@ console.log(b.x);
 
 思路点击 https://juejin.cn/post/6844903649399799815
 
-## 15. JavaScript中基本数据类型和引用数据类型是如何存储的
+## 15. JavaScript 中基本数据类型和引用数据类型是如何存储的
 
+基本数据类型(值类型，按值访问)：字符串、数字、布尔值、null、undefined、Symbol
+引用数据类型(按引用访问)：对象(Object)、数组(Array)、函数(Function)
 
+> 基本类型数据的变量直接存在栈中，而引用数据类型的变量，其地址存在栈中，数据存在堆中，通过栈中的这个地址访问堆内的数据。
+
+```js
+// 基本数据类型
+var a = 1;
+var b = a;
+b = 3;
+console.log("a=" + a, "b=" + b); // a=1,b=3
+
+// 引用数据类型1
+var arr1 = [1, 2, 3];
+var arr2 = arr1;
+arr2 = [5, 4, 3, 2, 1];
+console.log("arr1:", arr1); // arr1:[5, 4, 3, 2, 1]
+console.log("arr2:", arr2); // arr2:[5, 4, 3, 2, 1]
+
+// 引用数据类型2
+var obj1 = {
+  name: "xiaoming",
+  age: 18,
+};
+var obj2 = obj1;
+obj2.age = 20;
+console.log("obj1:", obj1); // {name: 'xiaoming', age: 20}
+console.log("obl2:", obj2); // {name: 'xiaoming', age: 20}
+```
+
+**如果使用赋值符号（=）进行了重新赋值，即改变了引用数据类型变量的地址**
+
+```js
+    var obj1={
+        name: 'qiqi',
+        age: 17
+    }
+    var obj2 = obj1
+    obj1 = {
+        name: 'xiaosi'
+        age: 19
+    }
+    console.log(obj1)
+    //obj1 = {name: 'xiaosi',age: 19 }
+    //obj2 = {name: 'qiqi',abe: 17}
+
+```
+
+*参考：https://juejin.cn/post/6844903894284238861*
