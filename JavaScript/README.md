@@ -1,13 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-30 10:40:55
- * @LastEditTime: 2021-03-08 14:20:02
+ * @LastEditTime: 2021-03-10 13:55:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\JavaScript\README.md
 -->
 
-# JavaScript 篇
+# JavaScript 篇 (part1)
 
 ## 1. 讲讲 JS 的数据类型？
 
