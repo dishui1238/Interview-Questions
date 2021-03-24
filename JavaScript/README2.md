@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-10 13:54:14
- * @LastEditTime: 2021-03-11 10:28:19
+ * @LastEditTime: 2021-03-12 13:06:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /crystal-github/Interview-Questions/JavaScript/README2.md
@@ -11,7 +11,7 @@
 
 ## 16. var、let 和 const 区别的实现原理是什么
 
-> 变量生命周期：声明（作用域注册一个变量）、初始化（分配内存，初始化为 undefined）、赋值
+> 变量生命周期：声明（作用域注册一个变量）、初始化（分配内存，初始化为 undefined）、赋值 （[进一步了解可点击这里](https://github.com/dishui1238/Notes/blob/master/JS/03%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1.md)）
 
 - var：遇到有 var 的作用域，在任何语句执行前都已经完成了声明和初始化，也就是变量提升而且拿到 undefined 的原因由来
 - function： 声明、初始化、赋值一开始就全部完成，所以函数的变量提升优先级更高
@@ -33,3 +33,37 @@ function c() {}
 ```
 
 对比于 var，let、const 只是解耦了声明和初始化的过程，var 是在任何语句执行前都已经完成了声明和初始化，let、const 仅仅是在任何语句执行前只完成了声明
+
+## 17. 如何清空一个数组
+
+1. 重新赋值一个空数组
+
+```js
+let a = [1, 2, 3];
+a = [];
+```
+
+原始数组并未改变，只改变了指针指向，并且不适用于 const
+
+2. 将数组长度置为 0
+
+```js
+const a = [1, 2, 3];
+a.length = 0;
+```
+
+3. Array.prototype.splice()
+
+```js
+let a = [1, 2, 3, 4];
+a.splice(0, a.length);
+```
+
+4. Array.prototype.pop() (不推荐，性能较差)
+
+```js
+let a = [1, 2, 3, 4];
+while (a.length) a.pop();
+```
+
+## 18. ES5/ES6 的继承除了写法以外还有什么区别？
