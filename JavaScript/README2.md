@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-10 13:54:14
- * @LastEditTime: 2021-03-12 13:06:19
+ * @LastEditTime: 2021-04-12 17:17:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /crystal-github/Interview-Questions/JavaScript/README2.md
@@ -66,4 +66,28 @@ let a = [1, 2, 3, 4];
 while (a.length) a.pop();
 ```
 
-## 18. ES5/ES6 的继承除了写法以外还有什么区别？
+## 18. 全局作用域中，用 const 和 let 声明的变量不在 window 上，那到底在哪里？如何去获取？
+
+在 ES5 中，顶层对象的属性和全局变量是等价的，var 命令和 function 命令声明的全局变量，自然也是顶层对象。
+
+```js
+var a = 12;
+function f() {}
+
+console.log(window.a); // 12
+console.log(window.f); // f(){}
+```
+
+但 ES6 规定，var 命令和 function 命令声明的全局变量，依旧是顶层对象的属性，但 let 命令、const 命令、class 命令声明的全局变量，不属于顶层对象的属性。
+
+```js
+let aa = 1;
+const bb = 2;
+
+console.log(window.aa); // undefined
+console.log(window.bb); // undefined
+```
+
+<img src="./imgs/21fff5e62228547b137be158168baf3.png">
+通过上图也可以看到，在全局作用域中，用 let 和 const 声明的全局变量并没有在全局对象中，只是一个块级作用域（Script）中,
+怎么获取？在定义变量的块级作用域中就能获取，既然不属于顶层对象，那就不加 window（global）。
