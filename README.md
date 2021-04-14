@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2021-04-12 16:52:14
+ * @LastEditTime: 2021-04-14 17:19:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Github-Repositories\Interview-Questions\README.md
@@ -54,7 +54,14 @@
 - [14. 输出以下代码的执行结果并解释为什么](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#14-%E8%BE%93%E5%87%BA%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B9%B6%E8%A7%A3%E9%87%8A%E4%B8%BA%E4%BB%80%E4%B9%88)
 
 - [15. JavaScript 中基本数据类型和引用数据类型是如何存储的](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#15-javascript-%E4%B8%AD%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%98%E5%82%A8%E7%9A%84)
+
 - [17. 如何清空一个数组](https://github.com/dishui1238/Interview-Questions/blob/main/JavaScript/README2.md#17-%E5%A6%82%E4%BD%95%E6%B8%85%E7%A9%BA%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84)
+
+- [18. 全局作用域中，用 const 和 let 声明的变量不在 window 上，那到底在哪里？如何去获取？](https://github.com/dishui1238/Interview-Questions/blob/main/JavaScript/README2.md#18-%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%AD%E7%94%A8-const-%E5%92%8C-let-%E5%A3%B0%E6%98%8E%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8D%E5%9C%A8-window-%E4%B8%8A%E9%82%A3%E5%88%B0%E5%BA%95%E5%9C%A8%E5%93%AA%E9%87%8C%E5%A6%82%E4%BD%95%E5%8E%BB%E8%8E%B7%E5%8F%96)
+
+- [19. 介绍下前端加密的常见场景和方法](https://github.com/dishui1238/Interview-Questions/blob/main/JavaScript/README2.md#19%E4%BB%8B%E7%BB%8D%E4%B8%8B%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%AF%86%E7%9A%84%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF%E5%92%8C%E6%96%B9%E6%B3%95)
+
+- [19. HTTP 与 HTTPS 区别](https://github.com/dishui1238/Interview-Questions/blob/main/JavaScript/README2.md#20-http-%E4%B8%8E-https-%E5%8C%BA%E5%88%AB)
 
 ## [浏览器篇](https://github.com/dishui1238/Interview-Questions/tree/main/Browser)
 
