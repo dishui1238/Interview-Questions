@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-10 13:54:14
- * @LastEditTime: 2021-04-14 17:14:13
+ * @LastEditTime: 2021-04-15 16:39:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /crystal-github/Interview-Questions/JavaScript/README2.md
@@ -186,3 +186,14 @@ HTTPS 默认工作在 TCP 协议 443 端口，它的工作流程一般如以下�
 ### HTTPS 的工作原理
 
 <img src="./imgs/https.jpg">
+
+## 21. setTimeout、Promise、Async/Await 的区别
+
+1. setTimeout
+   settimeout 的回调函数放到宏任务队列里，等到执行栈清空以后执行
+
+2. Promise
+   Promise 本身是同步的立即执行函数，回调函数会被放到 微任务队列 中
+
+3. Async/Await
+   async 函数返回一个 Promise 对象，当函数执行的时候，一旦遇到 await 就会先返回，等到触发的异步操作完成，再执行函数体内后面的语句。可以理解为，是让出了线程，跳出了 async 函数体。
