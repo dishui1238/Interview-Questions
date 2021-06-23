@@ -10,40 +10,16 @@
 
 <body>
   <script>
-    var permutation = function (s) {
-      const res = new Set();
-      const arr = s.split('');
-      const len = arr.length;
-
-      const dfs = (x) => {
-        // 已到最后一位，终止
-        if (x === len - 1) {
-          res.add(arr.join(''))
-          return;
-        }
-
-        let set = new Set();
-        for (let i = x; i < len; i++) {
-          if (set.has(arr[i])) continue;
-          set.add(arr[i]);
-          swap(i, x); // 交换，将 c[i] 固定在第 x 位
-          dfs(x + 1);
-          swap(i, x); // 恢复交换
-        }
-
+    var hammingWeight = function (n) {
+      let res = 0;
+      while (n) {
+        n &= n - 1
+        res++
       }
-
-      function swap(a, b) {
-        let tmp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = tmp;
-      }
-
-      dfs(0);
-      return Array.from(res);
+      return n
     };
-
-    console.log(permutation('abc'))
+    console.log(hammingWeight(
+      00000000000000000000000000001011))
   </script>
 </body>
 
