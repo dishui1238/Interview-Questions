@@ -10,16 +10,17 @@
 
 <body>
   <script>
-    var hammingWeight = function (n) {
-      let res = 0;
-      while (n) {
-        n &= n - 1
-        res++
+    var convertToTitle = function (columnNumber) {
+      let res = '',
+        words = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      while (columnNumber > 26) {
+        res = res + words[parseInt(columnNumber % 26) - 1];
+        columnNumber = parseInt(columnNumber / 26)
       }
-      return n
+      return res + words[columnNumber - 1];
     };
-    console.log(hammingWeight(
-      00000000000000000000000000001011))
+    console.log(convertToTitle(
+      2147483647))
   </script>
 </body>
 
