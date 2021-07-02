@@ -10,17 +10,20 @@
 
 <body>
   <script>
-    var convertToTitle = function (columnNumber) {
-      let res = '',
-        words = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      while (columnNumber > 26) {
-        res = res + words[parseInt(columnNumber % 26) - 1];
-        columnNumber = parseInt(columnNumber / 26)
+    var maxIceCream = function (costs, coins) {
+      const ncosts = costs.sort((a, b) => a - b);
+
+      let pay = 0;
+      for (let i = 0; i < costs.length; i++) {
+        const need = pay + ncosts[i]
+        if (need > coins) {
+          return i;
+        }
+        pay += ncosts[i];
       }
-      return res + words[columnNumber - 1];
+      return costs.length;
     };
-    console.log(convertToTitle(
-      2147483647))
+    console.log(maxIceCream([10, 2, 10, 10, 10, 10, 8, 2, 7, 8], 25))
   </script>
 </body>
 
