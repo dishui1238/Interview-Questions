@@ -10,20 +10,22 @@
 
 <body>
   <script>
-    var maxIceCream = function (costs, coins) {
-      const ncosts = costs.sort((a, b) => a - b);
-
-      let pay = 0;
-      for (let i = 0; i < costs.length; i++) {
-        const need = pay + ncosts[i]
-        if (need > coins) {
-          return i;
+    var numSubarraysWithSum = function (nums, goal) {
+      const map = new Map([ // 0 出现 1 次
+        [0, 1]
+      ]);
+      let sum = 0,
+        res = 0;
+      for (const num of nums) {
+        sum += num;
+        if (map.has(sum - goal)) {
+          res += map.get(sum - goal);
         }
-        pay += ncosts[i];
+        map.set(sum, (map.get(sum) || 0) + 1); // sum => 出现的次数
       }
-      return costs.length;
+      return res;
     };
-    console.log(maxIceCream([10, 2, 10, 10, 10, 10, 8, 2, 7, 8], 25))
+    console.log(numSubarraysWithSum([1,0,1,0,1], 2))
   </script>
 </body>
 
