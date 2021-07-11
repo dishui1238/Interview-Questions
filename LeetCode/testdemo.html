@@ -10,22 +10,20 @@
 
 <body>
   <script>
-    var numSubarraysWithSum = function (nums, goal) {
-      const map = new Map([ // 0 出现 1 次
-        [0, 1]
-      ]);
-      let sum = 0,
-        res = 0;
-      for (const num of nums) {
-        sum += num;
-        if (map.has(sum - goal)) {
-          res += map.get(sum - goal);
+    var hIndex = function (citations) {
+      citations.sort((a, b) => a - b)
+
+      let len = citations.length;
+      let h = 0;
+
+      for (let i = 0; i < len; i++) {
+        if (citations[i] >= len - i) {
+          h++
         }
-        map.set(sum, (map.get(sum) || 0) + 1); // sum => 出现的次数
       }
-      return res;
+      return h;
     };
-    console.log(numSubarraysWithSum([1,0,1,0,1], 2))
+    console.log(hIndex([3, 0, 6, 1, 5]))
   </script>
 </body>
 
