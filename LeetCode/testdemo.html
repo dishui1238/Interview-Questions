@@ -11,15 +11,12 @@
 <body>
   <script>
     var hIndex = function (citations) {
-      citations.sort((a, b) => a - b)
-
-      let len = citations.length;
+      const len = citations.length;
       let h = 0;
-
-      for (let i = 0; i < len; i++) {
-        if (citations[i] >= len - i) {
-          h++
-        }
+      let i = len - 1;
+      while (i >= 0 && citations[i] >= h) {
+        h++;
+        i--;
       }
       return h;
     };
