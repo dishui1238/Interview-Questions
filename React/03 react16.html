@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React16 合成事件</title>
+</head>
+
+<body>
+  <div id="parent">
+    <p id="child">child 事件执行</p>
+  </div>
+  <img src="./imgs/react16-click.jpg" />
+  <script>
+    const parent = document.getElementById('parent')
+    const child = document.getElementById('child')
+
+    function dispatchEvent(event) {
+      const paths = [];
+      let current = event.target;
+      while (current) {
+        paths.push(current);
+        current = current.parentNode;
+      }
+      // 模拟捕获和冒泡
+      for (let i = paths.length - 1; i >= 0; i--) { // 捕获从外到里
+        const handler = paths[i].onClickCapture;
+        handler && handler()
+      }
+      for (let i = 0; i < paths.length; i++) { // 捕获从里到外
+        const handler = paths[i].onClick;
+        handler && handler()
+      }
+    }
+
+
+    // 注册 react 的事件委托
+    // 注册于 document 冒泡阶段，原生的捕获和冒泡已结束
+    document.addEventListener('click', dispatchEvent)
+
+    parent.addEventListener('click', () => {
+      console.log('父元素原生捕获')
+    }, true)
+    parent.addEventListener('click', () => {
+      console.log('父元素原生冒泡')
+    })
+
+    child.addEventListener('click', () => {
+      console.log('子元素原生捕获')
+    }, true)
+    child.addEventListener('click', () => {
+      console.log('子元素原生冒泡')
+    })
+
+    document.addEventListener('click', () => {
+      console.log('document原生捕获')
+    }, true)
+    document.addEventListener('click', () => {
+      console.log('document原生冒泡')
+    })
+
+    // 注册 react 事件
+    parent.onClick = () => {
+      console.log('父元素 React 事件冒泡')
+    }
+    parent.onClickCapture = () => {
+      console.log('父元素 React 事件捕获')
+    }
+    child.onClick = () => {
+      console.log('子元素 React 事件冒泡')
+    }
+    child.onClickCapture = () => {
+      console.log('子元素 React 事件捕获')
+    }
+
+
+    // document原生捕获
+    // 父元素原生捕获
+    // 子元素原生捕获
+    // 子元素原生冒泡
+    // 父元素原生冒泡
+    // 父元素 React 事件捕获
+    // 子元素 React 事件捕获
+    // 子元素 React 事件冒泡
+    // 父元素 React 事件冒泡
+    // document原生冒泡
+  </script>
+</body>
+
+</html>
