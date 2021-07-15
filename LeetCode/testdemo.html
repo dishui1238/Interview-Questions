@@ -10,20 +10,19 @@
 
 <body>
   <script>
-    var addTwoNumbers = function (l1, l2) {
-      let res = [];
-      let carry = 0; // 进位
-      const len = Math.max(l1.length, l2.length);
-      let i = 0;
-      while (i < len) {
-        const bit = ((l1[i] || 0) + (l2[i] || 0)) % 10 + carry
-        carry = Math.floor(((l1[i] || 0) + (l2[i] || 0)) / 10)
-        res = [bit, ...res];
-        i++
+    function selectionSort(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        let minIndex = i;
+        for (let j = i; j < arr.length; j++) {
+          if (arr[j] < arr[minIndex]) {
+            minIndex = j;
+          }
+        }
+        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
       }
-      return res;
-    };
-    console.log(addTwoNumbers([0], [0]))
+      return arr;
+    }
+    console.log(selectionSort([7, 2, 1, 4, 6, 8, 9]))
   </script>
 </body>
 
