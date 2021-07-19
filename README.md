@@ -1,12 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-12-28 14:56:36
- * @LastEditTime: 2021-04-14 17:21:27
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \Github-Repositories\Interview-Questions\README.md
--->
-
 # 每日一问
 
 二八定律
