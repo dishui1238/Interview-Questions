@@ -1,12 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-03-10 13:54:14
- * @LastEditTime: 2021-04-15 16:39:12
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /crystal-github/Interview-Questions/JavaScript/README2.md
--->
-
 # JavaScript 篇 (part2)
 
 ## 16. var、let 和 const 区别的实现原理是什么

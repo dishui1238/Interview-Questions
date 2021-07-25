@@ -8,3 +8,5 @@
 2. `setState` 的批量更新优化也是建立在“异步”（合成事件、钩子函数）之上的，在原生事件和`setTimeout` 中不会批量更新，在“异步”中如果对同一个值进行多次 `setState` ， `setState` 的批量更新策略会对其进行覆盖，取最后一次的执行，如果是同时 `setState` 多个不同的值，在更新时会对其进行合并批量更新。
 
 3. 另外在其第二个参数回调函数 callback 中和 componentDidUpdate 更新生命周期函数中 也能得到最新的 this.state 值
+
+
