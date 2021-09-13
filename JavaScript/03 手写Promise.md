@@ -288,7 +288,7 @@ class MyPromise {
   }
 }
 
-function resolvePromise(x, resolve, reject) {
+function resolvePromise(x, promise2, resolve, reject) {
   
   // 如果相等了，说明return的是自己，抛出类型错误并返回
   if (promise2 === x) {

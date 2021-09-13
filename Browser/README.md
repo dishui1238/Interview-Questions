@@ -1,12 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-12-30 10:40:40
- * @LastEditTime: 2021-06-01 16:27:36
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \Github-Repositories\Interview-Questions\Browser\README.md
--->
-
 # 浏览器篇
 
 ## 1. 简述浏览器缓存读取规则
@@ -155,4 +146,3 @@ handleCallback({ success: true, user: "admin" });
 2. CORS
 
 浏览器将 CORS 跨域请求分为简单请求和非简单请求
-
