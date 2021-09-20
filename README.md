@@ -6,14 +6,6 @@
 
 20% 的人掌握世上 80% 的财富
 
-## [HTML 篇](https://github.com/dishui1238/Interview-Questions/tree/main/HTML)
-
-- [1. 页面导入样式时，使用 link 和 @import 有什么区别](https://github.com/dishui1238/Interview-Questions/tree/main/HTML#1-%E9%A1%B5%E9%9D%A2%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F%E6%97%B6%E4%BD%BF%E7%94%A8-link-%E5%92%8C-import-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB)
-
-## [css 篇](https://github.com/dishui1238/Interview-Questions/tree/main/CSS#css-%E7%AF%87)
-
-- [1. 介绍下 BFC 及其应用](https://github.com/dishui1238/Interview-Questions/tree/main/CSS#%E4%BB%8B%E7%BB%8D%E4%B8%8B-bfc-%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8)
-
 ## [JavaScript 篇](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript)
 
 - [1. 讲讲 JS 的数据类型？](https://github.com/dishui1238/Interview-Questions/tree/main/JavaScript#1-%E8%AE%B2%E8%AE%B2-js-%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
@@ -54,6 +46,10 @@
 
 - [20. HTTP 与 HTTPS 区别](https://github.com/dishui1238/Interview-Questions/blob/main/JavaScript/README2.md#20-http-%E4%B8%8E-https-%E5%8C%BA%E5%88%AB)
 
+- 21.手写 Promise
+
+## LeetCode 篇
+
 ## [浏览器篇](https://github.com/dishui1238/Interview-Questions/tree/main/Browser)
 
 - [1. 简述浏览器缓存读取规则](https://github.com/dishui1238/Interview-Questions/tree/main/Browser#1-简述浏览器缓存读取规则)
@@ -63,6 +59,14 @@
 ## [网络篇](https://github.com/dishui1238/Interview-Questions/tree/main/HTTP)
 
 - [1. 简单讲解一下 http2 的多路复用](https://github.com/dishui1238/Interview-Questions/tree/main/HTTP#1-%E7%AE%80%E5%8D%95%E8%AE%B2%E8%A7%A3%E4%B8%80%E4%B8%8B-http2-%E7%9A%84%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8)
+
+## [HTML 篇](https://github.com/dishui1238/Interview-Questions/tree/main/HTML)
+
+- [1. 页面导入样式时，使用 link 和 @import 有什么区别](https://github.com/dishui1238/Interview-Questions/tree/main/HTML#1-%E9%A1%B5%E9%9D%A2%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F%E6%97%B6%E4%BD%BF%E7%94%A8-link-%E5%92%8C-import-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB)
+
+## [css 篇](https://github.com/dishui1238/Interview-Questions/tree/main/CSS#css-%E7%AF%87)
+
+- [1. 介绍下 BFC 及其应用](https://github.com/dishui1238/Interview-Questions/tree/main/CSS#%E4%BB%8B%E7%BB%8D%E4%B8%8B-bfc-%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8)
 
 ---
 

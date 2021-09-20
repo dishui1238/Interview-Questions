@@ -1,59 +1,124 @@
-const FULFILLED = "fulfilled";
-const PENDING = "pending";
-const REJECT = "reject";
+const PENDING = "PENDING";
+const FULFILLED = "FULFILLED";
+const REJECTED = "REJECTED";
 
-class MyPromise {
+function resolvePromise(x, promise2, resolve, reject) {
+  if (promise2 === x) {
+    return reject(new TypeError("不能自己等待自己完成，出错了"));
+  }
+  if (x instanceof Promise) {
+    x.then(resolve, reject);
+  } else {
+    resolve(x);
+  }
+}
+class Promise {
   constructor(executor) {
-    // executor 是一个函数，立即执行
-    executor(this.resolve, this.reject);
+    this.value = undefined;
+    this.reason = undefined;
+    this.status = PENDING;
+    this.onFulfilledCallbacks = [];
+    this.onRejectedCallbacks = [];
+    try {
+      executor(this.resolve, this.reject);
+    } catch (error) {
+      // 如果有错误，就直接执行 reject
+      this.reject(error);
+    }
   }
 
-  status = PENDING;
-  value = null;
-  reason = null;
-  // 存储成功回调函数
-  onFulfilledCallback = [];
-  // 存储失败回调函数
-  onRejectedCallback = [];
-
-  // 更改成功后的状态
   resolve = (value) => {
     if (this.status === PENDING) {
       this.status = FULFILLED;
       this.value = value;
-
-      // 调用所有成功的回调
-      while (this.onFulfilledCallback.length) {
-        // Array.shift() 取出数组第一个元素，然后（）调用，shift不是纯函数，取出后，数组将失去该元素，直到数组为空
-        this.onFulfilledCallback.shift()(value);
-      }
+      this.onFulfilledCallbacks.forEach((fn) => fn());
     }
   };
-
-  // 更改失败后的状态
   reject = (reason) => {
     if (this.status === PENDING) {
-      this.status = REJECT;
+      this.status = REJECTED;
       this.reason = reason;
-
-      // 调用所有失败的回调
-      while (this.onRejectedCallback.length) {
-        // Array.shift() 取出数组第一个元素，然后（）调用，shift不是纯函数，取出后，数组将失去该元素，直到数组为空
-        this.onRejectedCallback.shift()(value);
-      }
+      this.onRejectedCallbacks.forEach((fn) => fn());
     }
   };
 
   then = (onFulfilled, onRejected) => {
-    if (this.status === FULFILLED) {
-      onFulfilled(this.value);
-    } else if (this.status === REJECT) {
-      onRejected(this.reson);
-    } else if (this.status === PENDING) {
-      // 因为不知道后面状态的变化情况，所以将成功回调和失败回调存储起来
-      // 等到执行成功失败函数的时候再传递
-      this.onFulfilledCallback.push(onFulfilled);
-      this.onRejectedCallback.push(onRejected);
-    }
+    // 如果不传，就使用默认函数
+    onFulfilled =
+      typeof onFulfilled === "function" ? onFulfilled : (value) => value;
+    onRejected =
+      typeof onRejected === "function"
+        ? onRejected
+        : (reason) => {
+            throw reason;
+          };
+    // then 的链式调用需要返回一个 promise
+    const promise2 = new Promise((resolve, reject) => {
+      if (this.status === FULFILLED) {
+        // 创建一个微任务等待 promise2 完成初始化
+        queueMicrotask(() => {
+          try {
+            // 获取成功回调函数的执行结果
+            const x = onFulfilled(this.value);
+            // 传入 resolvePromise 集中处理
+            resolvePromise(x, promise2, resolve, reject);
+          } catch (error) {
+            reject(error);
+          }
+        });
+      } else if (this.status === REJECTED) {
+        queueMicrotask(() => {
+          try {
+            // 调用失败回调，并且把原因返回
+            const x = onRejected(this.reason);
+            // 传入 resolvePromise 集中处理
+            resolvePromise(x, promise2, resolve, reject);
+          } catch (error) {
+            reject(error);
+          }
+        });
+      } else if (this.status === PENDING) {
+        this.onFulfilledCallbacks.push(() => {
+          queueMicrotask(() => {
+            try {
+              // 获取成功回调函数的执行结果
+              const x = onFulfilled(this.value);
+              // 传入 resolvePromise 集中处理
+              resolvePromise(x, promise2, resolve, reject);
+            } catch (error) {
+              reject(error);
+            }
+          });
+        });
+        this.onRejectedCallbacks.push(() => {
+          queueMicrotask(() => {
+            try {
+              // 获取成功回调函数的执行结果
+              const x = onRejected(this.value);
+              // 传入 resolvePromise 集中处理
+              resolvePromise(promise2, x, resolve, reject);
+            } catch (error) {
+              reject(error);
+            }
+          });
+        });
+      }
+    });
+    return promise2;
   };
+
+  static resolve(value) {
+    // 我们希望有等待效果 就用Promise.resolve方法
+    return new Promise((resolve, reject) => {
+      resolve(value);
+    });
+  }
+  static reject(reason) {
+    // Promise.reject不具备等待效果
+    return new Promise((resolve, reject) => {
+      reject(reason);
+    });
+  }
 }
+
+module.exports = Promise;
