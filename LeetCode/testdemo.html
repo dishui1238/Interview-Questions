@@ -10,19 +10,42 @@
 
 <body>
   <script>
-    function selectionSort(arr) {
-      for (let i = 0; i < arr.length; i++) {
-        let minIndex = i;
-        for (let j = i; j < arr.length; j++) {
-          if (arr[j] < arr[minIndex]) {
-            minIndex = j;
-          }
-        }
-        [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
-      }
-      return arr;
+    function ListNode(val, next) {
+      this.val = (val === undefined ? 0 : val)
+      this.next = (next === undefined ? null : next)
     }
-    console.log(selectionSort([7, 2, 1, 4, 6, 8, 9]))
+    var addTwoNumbers = function (l1, l2) {
+      let head = null,
+        tail = null;
+      let carray = 0; // 进位
+
+      while (l1 || l2) {
+        const n1 = l1 ? l1.val : 0;
+        const n2 = l2 ? l2.val : 0;
+        const sum = n1 + n2 + carray;
+
+        if (!head) {
+          head = tail = new ListNode(sum % 10);
+        } else {
+          tail.next = new ListNode(sum % 10);
+          tail = tail.next;
+        }
+        carray = Math.floor(sum / 10); // 取十位上的数字
+
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
+      }
+
+      // 有 carry>0，需要在答案链表的后面附加一个节点
+      if (carray > 0) {
+        tail.next = new ListNode(carray);
+      }
+      return head;
+    };
+
+    const l1 = new ListNode(9, new ListNode(8, new ListNode(7)))
+    const l2 = new ListNode(1, new ListNode(2))
+    console.log(l1, l2, addTwoNumbers(l1, l2))
   </script>
 </body>
 
