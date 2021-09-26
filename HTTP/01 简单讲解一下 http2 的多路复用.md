@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-01-06 11:10:35
- * @LastEditTime: 2021-09-24 13:36:45
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \Github-Repositories\Interview-Questions\HTTP\README.md
--->
 # 网络篇
 ## 1. 简单讲解一下 http2 的多路复用
 
