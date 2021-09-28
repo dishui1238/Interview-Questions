@@ -1,14 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-02-22 08:13:03
- * @LastEditTime: 2021-02-23 09:15:57
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \Github-Repositories\Interview-Questions\CSS\README.MD
--->
-
-# CSS 篇
-
 ## 介绍下 BFC 及其应用
 
 BFC 即 Block Formatting Contexts (块级格式化上下文)，它是一个独立的渲染区域，只有 Block-level box 参与， 它规定了内部的 Block-level Box 如何布局，并且与这个区域外部毫不相干。
