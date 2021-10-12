@@ -22,3 +22,5 @@ let newHook3 = { memoizedState: hook3.memoizedState, next: null };
 newHook2.next = newHook3;
 let newHooks = newHook1;
 ```
+
+https://juejin.cn/post/6944863057000529933
