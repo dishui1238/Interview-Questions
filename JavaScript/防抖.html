@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-10-13 18:53:44
+ * @LastEditTime: 2021-10-13 19:04:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview-Questions/JavaScript/防抖.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="input" />
+  <script>
+    /**
+     * 类似于柯里化传参 返回一个函数传递 fun 函数的参数
+     */
+    function debounce(fun, delay = 500) {
+      let timeId = null;
+      return function (...args) {
+        clearTimeout(timeId);
+        timeId = setTimeout(() => {
+          fun.apply(this, args);
+        }, delay);
+      };
+    }
+
+    // 使用
+    function logValue() {
+      console.log(111);
+    }
+    let inputb = document.getElementById("input");
+    let debounceFunc = debounce(logValue, 500); // (e.target.value) => {...}
+
+    inputb.addEventListener("keyup", debounce(logValue));
+  </script>
+</body>
+
+</html>
