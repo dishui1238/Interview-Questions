@@ -1,0 +1,12 @@
+- ProvidePlugin：自动加载模块，代替 require 和 import
+- html-webpack-plugin 可以根据模板自动生成 html 代码，并自动引用 css 和 js 文件
+- extract-text-webpack-plugin  将 js 文件中引用的样式单独抽离成 css 文件
+- DefinePlugin  编译时配置全局变量，这对开发模式和发布模式的构建允许不同的行为非常有用。
+- HotModuleReplacementPlugin  热更新
+- optimize-css-assets-webpack-plugin  不同组件中重复的 css 可以快速去重
+- webpack-bundle-analyzer  一个 webpack 的 bundle 文件分析工具，将 bundle 文件以可交互缩放的 treemap 的形式展示。
+- compression-webpack-plugin  生产环境可采用 gzip 压缩 JS 和 CSS
+- happypack：通过多进程模型，来加速代码构建
+- clean-wenpack-plugin  清理每次打包下没有使用的文件
+- speed-measure-webpack-plugin:可以看至 U 每个 Loader 和 Plugin 执行耗时（整个扌丁包耗时、每个 Plugin 和 Loader 耗时）
+- webpack-bundle-analyzer:可视化 Webpack 输出文件的体积（业务组件、依赖第三方模块
