@@ -7,3 +7,5 @@ a.age = 12;
 console.log(a); // { name: 'zqq', age: 12 }
 console.log(b.__proto__); // { name: 'zqq', age: 12 }
 ```
+
+创建一个空对象，没有任何的原型方法`Object.create(null)`

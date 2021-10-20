@@ -46,3 +46,8 @@ Promise.prototype.finally = function (cb) {
   );
 };
 ```
+
+4. promise 并行执行
+   promise.all
+
+5. promise 串行执行
