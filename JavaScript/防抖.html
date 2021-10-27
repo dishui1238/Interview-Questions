@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-10-13 18:53:44
- * @LastEditTime: 2021-10-13 19:04:41
+ * @LastEditTime: 2021-10-26 18:26:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Interview-Questions/JavaScript/防抖.html
@@ -27,6 +27,7 @@
       return function (...args) {
         clearTimeout(timeId);
         timeId = setTimeout(() => {
+          console.log('this', this)
           fun.apply(this, args);
         }, delay);
       };
@@ -37,7 +38,7 @@
       console.log(111);
     }
     let inputb = document.getElementById("input");
-    let debounceFunc = debounce(logValue, 500); // (e.target.value) => {...}
+    // let debounceFunc = debounce(logValue, 500); // (e.target.value) => {...}
 
     inputb.addEventListener("keyup", debounce(logValue));
   </script>
